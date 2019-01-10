@@ -1,7 +1,7 @@
 version: '3'
 services:
   web:
-    command: python docker_quickstart.py
+    command: python /code/docker_quickstart.py
     environment:
       - PYTHONUNBUFFERED=0
     build:
@@ -10,7 +10,7 @@ services:
     depends_on:
       - selenium
     volumes:
-      - ./logs:/code/logs
+      - ./:/code
   selenium:
     image: selenium/standalone-chrome
     shm_size: 128M
